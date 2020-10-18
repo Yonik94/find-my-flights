@@ -1,0 +1,12 @@
+:host {
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    color: black;
+}
+::ng-deep .mat-form-filed {
+    border-radius: 5px;
+    .mat-form-field-wrapper {
+        border-radius: 5px;
+    }
+}

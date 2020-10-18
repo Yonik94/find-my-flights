@@ -1,0 +1,12 @@
+<div class="sort">
+    <div>
+        <label for="">Sort by:</label>
+        <select [(ngModel)]="sort" (change)="onSortFlights()" name="sort-flight-length" id="">
+            <option [ngValue]="undefined">Select Sorting</option>
+            <option [ngValue]="{key: 'flightLength', direction: -1}">Fastest first</option>
+            <option [ngValue]="{key: 'flightLength', direction: 1}">Longest first</option>
+            <option [ngValue]="{key: 'connections', direction: 1}">More connections first</option>
+            <option [ngValue]="{key: 'connections', direction: -1}">Less connections first</option>
+        </select>
+    </div>
+</div>

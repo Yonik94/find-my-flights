@@ -1,0 +1,12 @@
+<div class="flight-page grow" *ngIf="getFlights; else loading">
+    <div class="container">
+        <filter [origins]="origins" [destinations]="destinations" (setFilter)="setFlights($event)"></filter>
+        <sort (sortFlights)="setSort($event)"></sort>
+        <div>
+            <flight-list [flights]="getFlights"></flight-list>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    Loading....
+</ng-template>

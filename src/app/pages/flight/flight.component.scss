@@ -1,0 +1,9 @@
+.flight-page {
+    min-height: 100vh;
+    background-color: rgb(241, 242, 248);
+    padding: 10px;
+    @media (min-width: 550px) {
+        padding: 30px;
+        margin: 0 auto;
+    }
+}

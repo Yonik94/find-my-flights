@@ -1,0 +1,8 @@
+.main-details {
+    >div {
+        width: 70px;
+        @media(min-width: 500px) {
+            width: 100px;
+        }
+    }
+}

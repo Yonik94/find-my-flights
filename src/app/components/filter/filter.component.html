@@ -1,0 +1,47 @@
+<div class="filter">
+    <form class="flex column" action="" (submit)="filterFlights($event)">
+        <div class="flex wrap">
+            <div class="flex column grow m1">
+                <label for="">Choose origin:</label>
+                <select class="grow" [(ngModel)]="filter.origin" name="origin" id="">
+                    <option value="">Select Origin</option>
+                    <option *ngFor="let origin of origins" [value]="origin">{{origin | titlecase}}</option>
+                </select>
+            </div>
+            <div class="flex column grow m1">
+                <label for="">Choose destination:</label>
+                <select class="grow" [(ngModel)]="filter.destination" name="destination" id="">
+                    <option value="">Select Destination</option>
+                    <option *ngFor="let destination of destinations">{{destination | titlecase}}</option>
+                </select>
+            </div>
+            <div class="flex column grow m1">
+                <label for="">Choose max connections:</label>
+                <select class="grow" [(ngModel)]="filter.connections" name="connections" id="">
+                    <option *ngFor="let number of [null, 0, 1, 2, 3, 4, 5]" [ngValue]="number">
+                        {{!number && number !== 0 ? 'All' : number}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex wrap">
+            <div class="flex column grow m1">
+                <label for="">Choose start date:</label>
+                <date-picker class="grow" (setDate)="setStartDate($event)"></date-picker>
+            </div>
+            <div class="flex column grow m1">
+                <label for="">Choose end date:</label>
+                <date-picker class="grow" (setDate)="setEndDate($event)"></date-picker>
+            </div>
+        </div>
+        <div class="flex wrap">
+            <label>Enter min price:</label>
+            <input class="grow" [(ngModel)]="filter.minPrice" ng-init="filter.minPrice = -Infinity"
+            name="min-price" type="number" placeholder="min-price">
+            <label for="">Enter max price:</label>
+            <input class="grow" [(ngModel)]="filter.maxPrice" ng-init="filter.maxPrice = Infinity"
+            name="max-price" type="number" placeholder="max-price">
+        </div>
+        <button class="submit-btn mb2">Filter</button>
+    </form>
+    <modal *ngIf="errorText" [text]="errorText" (closeModal)="closeModal()"></modal>
+</div>

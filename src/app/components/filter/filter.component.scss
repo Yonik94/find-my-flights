@@ -1,0 +1,27 @@
+.filter {
+    background-color: #042759;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    select {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        color: rgb(102, 102, 102);
+    }
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border-width: 1.5px;
+        font-size: 1.2rem;
+        margin: 5px 0px;
+        width: 100%;
+    }
+    button {
+        margin: 5px 0px;
+    }
+    label {
+        margin: 5px 2px 0px;
+    }
+}

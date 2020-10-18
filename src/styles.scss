@@ -1,0 +1,459 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $find-my-flight-primary: mat-palette($mat-indigo);
+// $find-my-flight-accent: mat-palette($mat-pink, A200, A100, A400);
+$find-my-flight-primary: mat-palette($mat-indigo);
+$find-my-flight-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$find-my-flight-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$find-my-flight-theme: mat-light-theme((
+  color: (
+    primary: $find-my-flight-primary,
+    accent: $find-my-flight-accent,
+    warn: $find-my-flight-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($find-my-flight-theme);
+
+/* You can add global styles to this file, and also import other style files */
+//Style files:
+
+//Helpers:
+/*!
+ * helpers.css v1.0.2
+ */
+
+/* resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: transparent;
+}
+
+button,
+select {
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+}
+
+input,
+textarea {
+    outline: none;
+    font-family: inherit;
+}
+
+.clean-list {
+    padding: 0;
+}
+
+li.clean-list {
+    list-style: none;
+}
+
+/* flex */
+
+.flex {
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.justify-start {
+        justify-content: flex-start;
+    }
+
+    &.justify-end {
+        justify-content: flex-end;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+
+    &.align-start {
+        align-items: flex-start;
+    }
+
+    &.align-end {
+        align-items: flex-end;
+    }
+
+    &.space-between {
+        justify-content: space-between;
+    }
+
+    &.space-around {
+        justify-content: space-around;
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    >.grow,
+    >.grow1 {
+        flex-grow: 1;
+    }
+
+    >.grow2 {
+        flex-grow: 2;
+    }
+
+    >.grow3 {
+        flex-grow: 3;
+    }
+
+    >.grow4 {
+        flex-grow: 4;
+    }
+}
+
+
+
+/* displays */
+
+.grid {
+    display: grid;
+}
+
+.inline {
+    display: inline;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.inline-list>li {
+    display: inline;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+/* margin & padding */
+.m0 {
+    margin: 0 !important
+}
+
+.m1 {
+    margin: 0.25em;
+}
+
+.m2 {
+    margin: 0.5em;
+}
+
+.m3 {
+    margin: 0.75em;
+}
+
+.m4 {
+    margin: 1em;
+}
+
+.m5 {
+    margin: 2em;
+}
+
+.m6 {
+    margin: 3em;
+}
+
+.p1 {
+    padding: 0.25em;
+}
+
+.p2 {
+    padding: 0.5em;
+}
+
+.p3 {
+    padding: 0.75em;
+}
+
+.p4 {
+    padding: 1em;
+}
+
+.p5 {
+    padding: 2em;
+}
+
+.p6 {
+    padding: 3em;
+}
+
+.pr1 {
+    padding-inline-end: 0.25em;
+}
+
+.pr2 {
+    padding-inline-end: 0.5em;
+}
+
+.pr3 {
+    padding-inline-end: 0.75em;
+}
+
+.pr4 {
+    padding-inline-end: 1em;
+}
+
+.pr5 {
+    padding-inline-end: 2em;
+}
+
+.pr6 {
+    padding-inline-end: 3em;
+}
+
+.mb1 {
+    margin-bottom: 0.25em;
+}
+
+.mb2 {
+    margin-bottom: 0.5em;
+}
+
+.mb3 {
+    margin-bottom: 0.75em;
+}
+
+.mb4 {
+    margin-bottom: 1em;
+}
+
+.mb5 {
+    margin-bottom: 2em;
+}
+
+.mb6 {
+    margin-bottom: 3em;
+}
+
+.ml1 {
+    margin-inline-start: 0.25em;
+}
+
+.ml2 {
+    margin-inline-start: 0.5em;
+}
+
+.ml3 {
+    margin-inline-start: 0.75em;
+}
+
+.ml4 {
+    margin-inline-start: 1em;
+}
+
+.ml5 {
+    margin-inline-start: 2em;
+}
+
+.ml6 {
+    margin-inline-start: 3em;
+}
+
+.mr1 {
+    margin-inline-end: 0.25em;
+}
+
+.mr2 {
+    margin-inline-end: 0.5em;
+}
+
+.mr3 {
+    margin-inline-end: 0.75em;
+}
+
+.mr4 {
+    margin-inline-end: 1em;
+}
+
+.mr5 {
+    margin-inline-end: 2em;
+}
+
+.mr6 {
+    margin-inline-end: 3em;
+}
+
+/* text */
+
+.text-center {
+    text-align: center;
+}
+
+.fw100 {
+    font-weight: 300;
+}
+
+.fw300 {
+    font-weight: 300;
+}
+
+.fw400 {
+    font-weight: 400;
+}
+
+.fw500 {
+    font-weight: 500;
+}
+
+.fw600 {
+    font-weight: 600;
+}
+
+.fw700 {
+    font-weight: 600;
+}
+
+.fw900 {
+    font-weight: 900;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* colors */
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-grey {
+    background-color: #f5f7f7;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.color-black {
+    color: #000;
+}
+
+.color-grey {
+    color: #999;
+}
+
+.no-border,
+.border-none {
+    border: none;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+.screener {
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hidden {
+    display: none;
+}
+
+//Buttons:
+button,
+a {
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.delete-btn {
+    background-color: rgb(199, 16, 16);
+    padding: 7px 10px;
+    border-radius: 3px;
+    color: white;
+    font-size: 17px;
+    box-shadow: .5px .5px .5px 0.5px rgb(98, 98, 98);
+
+    &:active {
+        box-shadow: none;
+    }
+}
+
+button{
+    padding: 7px 10px;
+    border-radius: 3px;
+    color: white;
+    font-size: 17px;
+    border: none;
+    &.add-btn { 
+        background-color: #007cba;
+
+    }
+    &.edit-btn {
+        background-color: #edb800;
+    }
+    &.submit-btn {
+        border-width: 1.5px;
+        background: linear-gradient(-180deg,#00a698,#00a698);
+    }
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

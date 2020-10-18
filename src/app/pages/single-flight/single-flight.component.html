@@ -1,0 +1,18 @@
+<div class="single-flight" *ngIf="flight">
+    <div class="back-container">
+        <div class="flex align-center">
+            <img src="../../../assets/left-arrow.png" alt="">
+            <a (click)="goBack()">Back to results</a>
+        </div>
+    </div>
+    <section>
+        <h2>{{ flight.destination }}</h2>
+    </section>
+    <div class="main-flight-container">
+        <flight-preview [flight]="flight" (setOpenConnections)="setConnectionsAppear($event)"></flight-preview>
+    </div>
+    <div class="conections-container" *ngIf="connections && isOpen">
+            <h3>Stations</h3>
+            <flight-preview *ngFor="let connection of connections" [flight]="connection"></flight-preview>
+    </div>
+</div>

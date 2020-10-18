@@ -1,0 +1,6 @@
+<ul *ngIf="flights">
+    <li class="clean-list" *ngFor="let flight of flights">
+        <flight-preview [flight]="flight" (click)="onFlightClick(flight.id)"></flight-preview>
+    </li>
+    <h4 *ngIf="!flights.length">Didn't find match results. Please change your filter...</h4>
+</ul>

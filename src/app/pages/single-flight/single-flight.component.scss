@@ -1,0 +1,47 @@
+.single-flight {
+    padding: 10px;
+    min-height: 100vh;
+    background-color: rgb(241, 242, 248);
+    .back-container {
+        padding: 10px 0;
+        display: flex;
+        div {
+            cursor: pointer;
+            a {
+                text-decoration: none;
+                color: #0770e3;
+                font-size: 1.1rem;
+                margin-inline-start: 15px;
+            }
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 50px;
+        background-color: #042759;
+        color: white;
+        h2 {
+            font-size: 2rem;
+            margin: 0;
+            text-align: center;
+        }
+    }
+    .main-flight-container {
+        position: relative;
+        button {
+            position: absolute;
+            right: 8%;
+            top: 40%;
+            background-color: transparent;
+            color: black;
+        }
+    }
+}

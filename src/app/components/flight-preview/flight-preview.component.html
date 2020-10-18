@@ -1,0 +1,22 @@
+<div class="flight-preview flex">
+    <div class="main-container flex grow space-around mr2">
+        <flight-main-details [timestamp]="flight.departureTime" [place]="flight.origin"></flight-main-details>
+        <flight-additional-details [flight]="flight"></flight-additional-details>
+        <flight-main-details [timestamp]="flight.arrivalTime" [place]="flight.destination"></flight-main-details>
+    </div>
+    <div class="flex column space-around align-center p4">
+        <h5 class="m0">
+            ${{ flight.price }}
+        </h5>
+        <div *ngIf="isOnSingle()" (click)="onArrowClick()">
+            <button *ngIf="!isOpen; else close">
+                <img src="../../../assets/down-arrow.png" alt="" />
+            </button>
+            <ng-template #close>
+                <button>
+                    <img src="../../../assets/up-arrow.png" alt="" />
+                </button>
+            </ng-template>
+        </div>
+    </div>
+</div>

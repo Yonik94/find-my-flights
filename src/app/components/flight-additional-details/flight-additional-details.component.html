@@ -1,0 +1,19 @@
+<div class="additional-details flex column justify-center align-center mr3">
+    <span class="mb2">{{ flight.flightLength | flightLength}}</span>
+    <div class="flight-bar mb2">
+        <div class="points-container flex space-around align-center">
+            <span class="connection-point" *ngFor="let station of stations"></span>
+        </div>
+        <img src="../../../assets/airplane.png" alt="">
+    </div>
+    <div class="flex wrap justify-center" *ngIf="stations; else nonStop">
+        <span style="color: #d1435b">{{ stations.length }} {{stations.length > 1 ?  'stops' : 'stop'}}</span>
+        <span *ngFor="let station of stations">{{ station }}</span>
+    </div>
+    <ng-template #nonStop>
+        <span style="color: #00a698">
+            non-stop
+        </span>
+    </ng-template>
+
+</div>
