@@ -14,10 +14,7 @@ export class FlightService {
 
   constructor(private apollo: Apollo) { }
 
-  public loadFlights(filterBy = this.lastFilter, sortBy = null, isForUpdate = true): Promise<[]> {
-    console.log(this.lastFilter);
-    console.log({filterBy});
-    
+  public loadFlights(filterBy = this.lastFilter, sortBy = null, isForUpdate = true): Promise<[]> {    
     let origin: String = null;
     if (filterBy && filterBy.origin) {
       origin = filterBy.origin;
@@ -183,7 +180,6 @@ export class FlightService {
   }
   _isMatchByDates(flight, { startDate, endDate }): Boolean {
     const hour = 1000 * 3600;
-    console.log({ flight, startDate, endDate });
     if (flight.departureTime >= startDate
       && flight.departureTime <= (endDate + (hour * 24))) {
       return true;
